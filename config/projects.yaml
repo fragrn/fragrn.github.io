@@ -1,7 +1,6 @@
 - id: AI4DB
   title: "AI4DB"
-  team: "新型数据库系统实验室"
-  description: "（1）在智能分析型数据引擎方向，杨程程研究员带领的新型数据库系统实验室着力于利用机器学习技术提升大数据系统在实时与离线场景下的执行效率和系统稳定性，深度聚焦于查询性能调优、参数配置与资源分配等核心环节。\n\n代表性成果包括：面向 Flink 实时数据仓库，提出并实现基于模型的并行度自适应调优方法，显著缓解系统反压并提升吞吐能力（ICDE'25）；针对字节跳动 ByteHouse 离线数仓，设计基于查询特征的参数优化机制，有效降低查询延迟与失败率（VLDB'25）；引入学习型基数估计器以补全优化器在复杂数据分布下的估算能力，以优化执行计划选择（SIGMOD'24）。\n\n（2）在数据库自动配置建议方向，实验室聚焦于建立工作负载感知的数据库配置建议机制（Advisor），以实现资源调度、索引推荐以及旋钮调优等。\n\n代表性成果包括：提出融合跨尺度注意力机制的集群资源需求预测模型，并基于滚动时域优化策略，实现前瞻式资源调度（VLDB'23）；面向 HTAP 数据库的混合负载处理需求，构建基于多智能体强化学习的混合索引推荐方法，有效提升系统吞吐能力（ICDE'25）；面向 NVM-SSD 混合架构的 LSM-tree 调优，提出基于数据热度建模的键值数据置换策略与强化学习驱动的自适应 Compaction 方法，兼顾系统性能与写放大控制（ICDE'23）；结合大语言模型与贝叶斯优化框架，提出低成本、高效率的旋钮调优方法（ICDE'25, ECML'24），释放数据库性能潜力。这些工作已在阿里云MaxCompute、PingCAP TiDB 等系统中完成实际部署与验证。"
+  description: "（1）在智能分析型数据引擎方向，实验室着力于利用机器学习技术提升大数据系统在实时与离线场景下的执行效率和系统稳定性，深度聚焦于查询性能调优、参数配置与资源分配等核心环节。\n\n代表性成果包括：面向 Flink 实时数据仓库，提出并实现基于模型的并行度自适应调优方法，显著缓解系统反压并提升吞吐能力（ICDE'25）；针对字节跳动 ByteHouse 离线数仓，设计基于查询特征的参数优化机制，有效降低查询延迟与失败率（VLDB'25）；引入学习型基数估计器以补全优化器在复杂数据分布下的估算能力，以优化执行计划选择（SIGMOD'24）。\n\n（2）在数据库自动配置建议方向，实验室聚焦于建立工作负载感知的数据库配置建议机制（Advisor），以实现资源调度、索引推荐以及旋钮调优等。\n\n代表性成果包括：提出融合跨尺度注意力机制的集群资源需求预测模型，并基于滚动时域优化策略，实现前瞻式资源调度（VLDB'23）；面向 HTAP 数据库的混合负载处理需求，构建基于多智能体强化学习的混合索引推荐方法，有效提升系统吞吐能力（ICDE'25）；面向 NVM-SSD 混合架构的 LSM-tree 调优，提出基于数据热度建模的键值数据置换策略与强化学习驱动的自适应 Compaction 方法，兼顾系统性能与写放大控制（ICDE'23）；结合大语言模型与贝叶斯优化框架，提出低成本、高效率的旋钮调优方法（ICDE'25, ECML'24），释放数据库性能潜力。这些工作已在阿里云MaxCompute、PingCAP TiDB 等系统中完成实际部署与验证。"
   image: "/images/AI4DB.png"
   papers:
     - venue: "ICDE 2025"
@@ -50,9 +49,8 @@
       authors: "W Sun, Z Pan, Z Hu, Y Liu, C Yang*, R Zhang, X Zhou"
       abstract: "The large language model (LLM)-based knob tuning method has attracted considerable attention due to its excellent in-context learning ability and generalizability. However, the existing LLM-based tuning methods do not effectively harmonize multi-source external knowledge, leading to missed opportunities for enhanced knob tuning. In light of this, we propose Rabbit, a novel approach that leverages retrieval-augmented generation to enhance database knob tuning tools, which seamlessly integrates structured historical tuning experience with graph-encoded static knowledge. First, we introduce an experience-driven knob selection strategy, enhanced by dependency-aware external knowledge integration, to systematically select key knobs. Second, we develop a cutting-edge multi-agent knob domain pruning method, which ensures the reduced search space remains compact yet effective. Finally, we leverage the few-shot capabilities of LLMs to act as surrogate models, enabling rapid exploration of the pruned search space, followed by incremental optimization that expands the search space using historical insights. Moreover, we also design an adaptive strategy to transition between these two search spaces, striking an optimal balance between exploration and exploitation. Extensive experiments on well-established benchmarks demonstrate that Rabbit outperforms the state-of-the-art methods in both effectiveness and efficiency, pointing to a new paradigm for this area."
 - id: DBHammer
-  title: "数据库系统测评"
-  team: "DBHammer实验室"
-  description: "由张蓉教授带领的DBHammer实验室致力于数据库测评与优化，其代表性工作有：\n\n1.	面向数据库系统查询优化的负载生成：早在2018年，DBHammer实验室提出了Touchstone，实现了高效的查询感知型数据生成，使得TPC-H负载下的数据生成速度大幅提升1000倍，为后续分析型算子的优化奠定了深厚研究基础；为了进一步扩大在复杂查询算子下的场景生成能力，Touchstone+提出了面向匹配运算符的负载生成技术；紧接着，Mirage设计了更合理的处理架构，使得面向复杂负载的场景生成技术在算子的支持度上达到了新高度；\n\n2.	面向事务处理性能调优的负载生成：2022年，DBHammer实验室在面向事务负载性能优化领域提出了基于事务执行运行时关键特征的建模技术，突破了事务型应用场景仿真的难题，第一次首次提供了面向事务型应用场景的负载生成技术，为推动事务处理性能优化做出了贡献。\n\n3.	面向新型数据库场景的评测基准：数据库应用场景的日益复杂引发了数据库架构革新和技术的创新。为了开创数据库系统良性的竞争和发展空间，DBHammer实验室设计并实现了一系列评测基准。2020年研发出密集型事务处理评测技术，针对秒杀场景等高冲突环境实现了竞争度的细粒度可控; 2023年 DBHammer研发出面向分布式事务型数据库系统的评测基准Dike。同时，为满足分析型数据库系统在复杂连接算子下的性能评测和调优需求，DBHammer推出了Artemis自动化测试套件，实现了OLAP数据库功能测试的数据、负载与结果自动生成。\n\n4.	数据库系统事务处理可扩展正确性验证：2023年，DBHammer开发的Leopard，第一次从隔离级别的内核实现出发，完成了可扩展的通用隔离级别验证框架的实现；2024年， 提出了专注于隔离级别高效测试案例生成的DBStorm生成框架，通过冲突图生成和异常敏感的冲突注入机制，并引入软件工程领域的蜕变技术，完成了可扩展大规模高测试效用的事务负载生成，并成功揭示多个主流数据库系统的实现缺陷，受到主流数据库厂商的关注。"
+  title: "数据库测试与评测"
+  description: "1.	面向数据库系统查询优化的负载生成：早在2018年，实验室提出了Touchstone，实现了高效的查询感知型数据生成，使得TPC-H负载下的数据生成速度大幅提升1000倍，为后续分析型算子的优化奠定了深厚研究基础；为了进一步扩大在复杂查询算子下的场景生成能力，Touchstone+提出了面向匹配运算符的负载生成技术；紧接着，Mirage设计了更合理的处理架构，使得面向复杂负载的场景生成技术在算子的支持度上达到了新高度；\n\n2.	面向事务处理性能调优的负载生成：2022年，实验室在面向事务负载性能优化领域提出了基于事务执行运行时关键特征的建模技术，突破了事务型应用场景仿真的难题，首次提供了面向事务型应用场景的负载生成技术，为推动事务处理性能优化做出了贡献。\n\n3.	面向新型数据库场景的评测基准：实验室设计并实现了一系列评测基准。2020年研发出密集型事务处理评测技术，针对秒杀场景等高冲突环境实现了竞争度的细粒度可控; 2023年实验室研发出面向分布式事务型数据库系统的评测基准Dike。同时，为满足分析型数据库系统在复杂连接算子下的性能评测和调优需求，实验室推出了Artemis自动化测试套件，实现了OLAP数据库功能测试的数据、负载与结果自动生成。\n\n4.	数据库系统事务处理可扩展正确性验证：2023年实验室开发的Leopard，第一次从隔离级别的内核实现出发，完成了可扩展的通用隔离级别验证框架的实现；2024年， 提出了专注于隔离级别高效测试案例生成的DBStorm生成框架，通过冲突图生成和异常敏感的冲突注入机制，并引入软件工程领域的蜕变技术，完成了可扩展大规模高测试效用的事务负载生成，并成功揭示多个主流数据库系统的实现缺陷，受到主流数据库厂商的关注。"
   image: "/images/DBHammer.png"
   papers:
     - venue: "USENIX ATC 2018"
@@ -153,9 +151,8 @@
       authors: "Keqiang Li, Siyang Weng, Lyu Ni, Chengcheng Yang, Rong Zhang, Xuan Zhou, Aoying Zhou"
       abstract: "Isolation level (IL) acts as a correctness contract between applications and DBMSs. Problematic IL implementations would cause incorrect transaction execution results and erroneous database states. However, existing studies could not efficiently generate various effective workloads for IL test. The core challenges come from the requirements of (a) black-box testing (trigger the IL code of a closed source DBMS), (b) effective testing (evade redundant and ineffective testing), and (c) anomaly-sensitive testing (test various ILs in a distinguishable way). For black-box testing, we investigate the IL implementations of 15 popular DBMSs and discover that they follow a generic framework that utilizes conflict graphs to manage all conflicts of a workload, and performs a verification policy to prevent non-serializable anomalies. For effective testing, we propose a lightweight data state mirroring method, which helps generate SQL operations that precisely access its expected records and participate the formation of specific conflict graphs. We also propose an efficient history-independent approach to generate dissimilar conflict graphs. It guarantees the graph generation overhead is irrelevant to the scale of historical graphs. For anomaly-sensitive testing, we propose an implantation-based approach to orchestrate conflict record accesses and inject them into different transactions according to the anomaly definition. Our approach outperforms existing approaches in testing effectiveness, efficiency, and coverage. Practically, we have successfully found 33 bugs in popular DBMSs."
 - id: DMIC
-  title: "智能系统"
-  team: "数据管理与智能计算系统DMIC（Data Management and Intelligence Computing System）研究室"
-  description: "由徐辰教授带领的数据管理与智能计算系统DMIC（Data Management and Intelligence Computing System）研究室针对着力于解决智能时代的数据管理问题。研究室成员立足于数据管理与智能计算的交叉融合，同时聚焦于大数据处理系统、数据库系统、深度学习系统等基础软件系统的性能瓶颈，从上层应用、底层硬件等多角度出发，着力提升软件系统的执行效率，研发支持以支持研发智能时代数据管理的关键基础软件系统。研究工作得到国家和上海市科技计划，以及蚂蚁、腾讯、PingCAP等合作企业的支持。\n\n其代表性成果有：\n\n（1）支持AI预测查询的数据管理系统：随着智能时代的到来，分析查询从传统SQL逐步发展成为含有利用智能计算框架进行推理的预测查询，然而数据管理系统与智能计算框架之间存在一定壁垒：一方面，数据管理系统可能无法支持预测查询；另一方面，即便能够支持预测查询，在执行过程中运行时不匹配也存在严重的性能损失。我们与蚂蚁OceanBase、PingCAP等企业合作开展研究，初步成果在SIGMOD、ICDE上得到发表。\n\n（2）基于大数据平台的机器学习系统：大数据处理平台在机器学习等场景中广泛应用，基于Spark等大数据处理平台构建分布式机器学习系统是基本共识。机器学习算法通常可以表达为一系列的矩阵运算，这些运算可以翻译执行计划并进行优化。我们结合机器学习算法的特点，设计了针对迭代式矩阵运算的混合计算、冗余消解技术，相关研究成果连续发表在数据管理领域顶级学术会议SIGMOD、VLDB，研制的机器学习系统性能与现有系统相比得到显著提升。"
+  title: "面向AI的数据管理系统"
+  description: "（1）支持AI预测查询的数据管理系统：随着智能时代的到来，分析查询从传统SQL逐步发展成为含有利用智能计算框架进行推理的预测查询，然而数据管理系统与智能计算框架之间存在一定壁垒：一方面，数据管理系统可能无法支持预测查询；另一方面，即便能够支持预测查询，在执行过程中运行时不匹配也存在严重的性能损失。我们与蚂蚁OceanBase、PingCAP等企业合作开展研究，初步成果在SIGMOD、ICDE上得到发表。\n\n（2）基于大数据平台的机器学习系统：大数据处理平台在机器学习等场景中广泛应用，基于Spark等大数据处理平台构建分布式机器学习系统是基本共识。机器学习算法通常可以表达为一系列的矩阵运算，这些运算可以翻译执行计划并进行优化。我们结合机器学习算法的特点，设计了针对迭代式矩阵运算的混合计算、冗余消解技术，相关研究成果连续发表在数据管理领域顶级学术会议SIGMOD、VLDB，研制的机器学习系统性能与现有系统相比得到显著提升。"
   image: "/images/DMIC.png"
   papers:
     - venue: "SIGMOD '25"
@@ -176,12 +173,14 @@
     - venue: "VLDB 2021"
       title: "HyMAC: A Hybrid Matrix Computation System"
 - id: Cedar
-  title: "分布式数据库系统"
-  description: "代表成果包括：\n\n（1）基于分布式LSM-tree的分布式数据库Cedar，其具备高通量、高性能、高可用等特性，解决了大型银行、电信等行业的互联网级关键核心业务对数据库系统的需求；\n\n（2）面向多写共享缓存的云数据库，设计并实现了 PG‑RAC：一种PostgreSQL上的共享内存/共享存储多写架构。其特点为，集群中任一节点可访问共享缓冲区，并通过日志复制实现跨节点事务一致性能力，解决了多主写入下的事务冲突与一致性问题。\n\n（3）面向分布式事务系统，提出 HAWK：一种受负载驱动的层级式死锁检测机制，通过根据并发事务的工作负载动态调整检测策略，实现快速、低开销的死锁发现，并显著提升系统在复杂负载下的吞吐能力（VLDB 2025）；\n\n（4）面向数据库元数据管理，构建了FDBKeeper：一种基于分布式 KV 存储（FoundationDB）的高可扩展协调服务平台。其能提供事务级一致的锁管理与配置同步，支持高并发环境下的容错与线性扩展，现今已成功嵌入 ClickHouse 等系统中（VLDB 2025）；\n\n（5）面向亿万节点图数据处理，推出 RedTAO，一种支持万亿边级图存储与高吞吐查询的分布式图引擎。它优化了图数据的存储布局和并行处理机制，实现了超大规模图遍历与更新任务的高效执行（SIGMOD 2025）；\n\n（6）面向 HTAP 混合事务与分析系统，设计了Log Replaying for Real-Time HTAP，一种采用基于Epoch的两阶段日志重放框架，实现了事务日志的并行回放，提高系统在并发事务与实时查询场景下的一致性保障和吞吐能力（ICDE 2024）。"
+  title: "分布式与云原生数据库"
+  description: "（1）团队研发的分布式数据库系统 Cedar 具备高通量、高性能、高可用等特性，解决了大型银行、电信等行业的互联网级关键核心业务对数据库系统的需求。为了满足关键核心业务互联网化对系统扩展性和数据一致性的双重要求，Cedar 采用了读写分离的高并行系统架构，并在此架构的基础之上重新设计和实现了数据库的查询处理和事务处理功能。针对关键业务的高可用需求，Cedar 系统在读写分离的架构上又引入一主多备的多活架构。\n\n（2）SlimStore 是一种基于云的智能备份存储架构，通过将系统分为存储层和计算层，弹性利用云资源优化数据去重和恢复。它采用两种节点设计：L节点：针对新备份版本，利用局部性和历史感知策略，实现快速去重和高效恢复；G节点：针对旧备份版本，提供精确离线去重，优化存储成本并提升新版本恢复性能。实验表明，SlimStore在去重速度、恢复效率和存储节省方面优于现有方案，同时具备弹性扩展能力。\n\n（3）面向分布式事务系统，提出 HAWK：一种受负载驱动的层级式死锁检测机制，通过根据并发事务的工作负载动态调整检测策略，实现快速、低开销的死锁发现，并显著提升系统在复杂负载下的吞吐能力（VLDB 2025）；\n\n（4）面向数据库元数据管理，构建了FDBKeeper：一种基于分布式 KV 存储（FoundationDB）的高可扩展协调服务平台。其能提供事务级一致的锁管理与配置同步，支持高并发环境下的容错与线性扩展，现今已成功嵌入 ClickHouse 等系统中（VLDB 2025）；\n\n（5）面向亿万节点图数据处理，推出 RedTAO，一种支持万亿边级图存储与高吞吐查询的分布式图引擎。它优化了图数据的存储布局和并行处理机制，实现了超大规模图遍历与更新任务的高效执行（SIGMOD 2025）；\n\n（6）面向 HTAP 混合事务与分析系统，设计了Log Replaying for Real-Time HTAP，一种采用基于Epoch的两阶段日志重放框架，实现了事务日志的并行回放，提高系统在并发事务与实时查询场景下的一致性保障和吞吐能力（ICDE 2024）。"
   image: "/images/cedar.png"
   papers:
     - venue: "USENIX ATC '18"
       title: "Solar: Towards a Shared-Everything Database on Distributed Log-Structured Storage"
+    - venue: "ICDE 2021"
+      title: "SLIMSTORE: A Cloud-based Deduplication System for Multi-version Backups"
     - venue: "TOS 2019"
       title: "SolarDB: Toward a Shared-Everything Database on Distributed Log-Structured Storage"
     - venue: "VLDB 2025"
@@ -194,6 +193,17 @@
       title: "Log Replaying for Real-Time HTAP: An Adaptive Epoch-based Two-Stage Framework"
     - venue: "VLDB 2019"
       title: "Adaptive Optimistic Concurrency Control for Heterogeneous Workloads"
+- id: "PG-RAC"
+  title: "高性能数据处理技术"
+  description: "PG-RAC是一种多写可扩展共享缓存数据库，其特点为集群中任一节点可访问共享缓冲区，并通过日志复制实现跨节点事务一致性能力，解决了多主写入下的事务冲突与一致性问题。\n\nHockey是一种专为混合PMem-SSD存储而设计的高效列存储引擎，作为一种新颖的存储设备，Persistent Memory(PMem)为混合存储提供了一个新的有前途的选择。Hockey设计了一种专为PMem-SSD混合存储优化的列式存储引擎。该系统通过创新性地设计PMem上的数据与元数据结构、优化访问模式，并制定智能数据放置策略，有效解决了混合存储设备间的性能差异问题。实验表明，Hockey在SSB基准测试中显著优于传统存储引擎，实现了查询性能的大幅提升。"
+  image: "/images/PG.png"
+  papers:
+    - venue: "CIKM 2022"
+      title: "Hockey: A Hybrid PMem-SSD Storage Engine for Analytical Database"
+    - venue: "USENIX ATC '18"
+      title: "Solar: Towards a Shared-Everything Database on Distributed Log-Structured Storage"
+    - venue: "TOS 2019"
+      title: "SolarDB: Toward a Shared-Everything Database on Distributed Log-Structured Storage"
 - id: DL
   title: "深度学习系统性能优化"
   description: "机器学习、人工智能是当下热门的名词，不少研究关注于准确率的因素大多数研究着力于提高训练结果的准确率。我们有所不同与大多数研究不同的是，我们着眼于如何提高机器学习训练、推理过程的处理速度。、\n\n（1）面向深度学习训练负载，我们的研究包括如何从算法特性、硬件架构等方面加速算法执行。最终，我们实现了分别在数据并行和流水并行的训练方式下开展性能优化工作，得到CCF-腾讯犀牛鸟基金、腾讯犀牛鸟精英人才计划等支持，研究成果发表在PPoPP、SIGMOD。\n\n（2）此外，面向深度学习推理负载，我们研究如何降低推理的延迟、提高吞吐量。除此之外，我们还关注如何将流计算系统等大数据处理系统和深度学习进行融合，从而高效地执行深度学习推理。相关研究工作发表在ICDE 2024。"
