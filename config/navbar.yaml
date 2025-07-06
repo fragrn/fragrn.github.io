@@ -1,6 +1,6 @@
-- label: "INDEX"    # 导航栏显示的名称
+- label: "MAIN"    # 导航栏显示的名称
   url: "/"          # 内部路由名称
-- label: "PROJECTS"
+- label: "PUBLICATIONS"
   url: "/project"
 - label: "COURSES & TEXTBOOKS"
   url: "/book"
