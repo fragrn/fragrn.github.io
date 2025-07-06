@@ -1,0 +1,28 @@
+description:
+  label: "概述" # 中文标题
+  label_en: "ABOUT US" # 英文标题
+  content: >
+    数字经济的飞速发展为数据基础设施带来了巨大挑战。
+    如何让数据系统充分利用云计算平台上的各类存储与计算资源，实现高效的数据管理、数据分析和建模，
+    以应对数字化、智能化应用对数据服务的多样化需求，
+    是近年来学界和工业界关注的核心问题，也是数据学院长期从事的科研方向。
+    数据学院与众多企业展开合作，研制新一代数据库、数据仓库和 AI 数据管理系统，
+    取得了丰富的科研成果，获得多项省部级和国家级科技进步奖。
+  diagram: "/images/diagram.png" # 架构图路径，以public为根目录计算
+  enabled: true # 是否显示在页面上
+research:
+  label: "研究方向"
+  label_en: "RESEARCH"
+  crossed: true  # 左右交错排列
+  enabled: true
+teams:
+  label: "研究团队"
+  label_en: "TEAMS"
+  content: >
+    研究团队现有全职教师10人，其中具有正高级职称8人，
+    国家级领军人才3人，多人获得省部级优秀青年人才称号。
+  enabled: true
+textbooks:
+  label: "课程与教材建设"
+  label_en: "COURSES & TEXTBOOKS"
+  enabled: true

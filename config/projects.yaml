@@ -1,169 +1,90 @@
-- id: AI4DB
-  title: "AI4DB"
-  description: "（1）在智能分析型数据引擎方向，实验室着力于利用机器学习技术提升大数据系统在实时与离线场景下的执行效率和系统稳定性，深度聚焦于查询性能调优、参数配置与资源分配等核心环节。\n\n代表性成果包括：面向 Flink 实时数据仓库，提出并实现基于模型的并行度自适应调优方法，显著缓解系统反压并提升吞吐能力（ICDE'25）；针对字节跳动 ByteHouse 离线数仓，设计基于查询特征的参数优化机制，有效降低查询延迟与失败率（VLDB'25）；引入学习型基数估计器以补全优化器在复杂数据分布下的估算能力，以优化执行计划选择（SIGMOD'24）。\n\n（2）在数据库自动配置建议方向，实验室聚焦于建立工作负载感知的数据库配置建议机制（Advisor），以实现资源调度、索引推荐以及旋钮调优等。\n\n代表性成果包括：提出融合跨尺度注意力机制的集群资源需求预测模型，并基于滚动时域优化策略，实现前瞻式资源调度（VLDB'23）；面向 HTAP 数据库的混合负载处理需求，构建基于多智能体强化学习的混合索引推荐方法，有效提升系统吞吐能力（ICDE'25）；面向 NVM-SSD 混合架构的 LSM-tree 调优，提出基于数据热度建模的键值数据置换策略与强化学习驱动的自适应 Compaction 方法，兼顾系统性能与写放大控制（ICDE'23）；结合大语言模型与贝叶斯优化框架，提出低成本、高效率的旋钮调优方法（ICDE'25, ECML'24），释放数据库性能潜力。这些工作已在阿里云MaxCompute、PingCAP TiDB 等系统中完成实际部署与验证。"
-  image: "/images/AI4DB.png"
-  papers:
-    - venue: "ICDE 2025"
-      url: "https://arxiv.org/abs/2504.12074"
-      title: "Learning from the Past: Adaptive Parallelism Tuning for Stream Processing Systems"
-      authors: "Yuxing Han, Lixiang Chen, Haoyu Wang, Zhanghao Chen, YiFan Zhang, Chengcheng Yang, Kongzhang Hao, Zhengyi Yang"
-      abstract: "Distributed stream processing systems rely on the dataflow model to define and execute streaming jobs, organizing computations as Directed Acyclic Graphs (DAGs) of operators. Adjusting the parallelism of these operators is crucial to handling fluctuating workloads efficiently while balancing resource usage and processing performance. However, existing methods often fail to effectively utilize execution histories or fully exploit DAG structures, limiting their ability to identity bottlenecks and determine the optimal parallelism. In this paper, we propose StreamTune, a novel approach for adaptive paralelism tuning in stream processing systems. StreamTune incorporates a pre-training and fine-tuning framework that leverages global knowledge from historical execution data for job-specific parallelism tuning. In the pre-training phase, Stream Tune clusters the historical data with Graph Edit Distance and pre-trains a Graph Neural Networkbased encoder per cluster to capture the correlation between the operator parallelism, DAG structures, and the identified operator-level bottlenecks. In the online tuning phase, StreamTune iteratively refines operator parallelism recommendations using an operator-level bottleneck prediction model enforced with a monotonic constraint, which aligns with the observed system performance behavior. Evaluation results demonstrate that StreamTune reduces reconfigurations by up to 29.6% and parallelism degrees by up to 30.8% in Apache Flink under a synthetic workload. In Timely Dataflow, StreamTune achieves up to an 83.3% reduction in parallelism degrees while maintaining comparable processing performance under the Nexmark benchmark, when compared to the state-of-the-art methods."
+- id: "AI4DB" # 内部ID
+  title: "AI4DB" # 项目名
+  description: > # 项目简介（可换行，实际显示时会忽略换行符）
+    该类型研究将人工智能技术应用于数据库系统的自动化优化和管理。
+    主要成果包括：开发了面向分布域外工作负载的风险感知索引收益估算方法(Rainbow)，
+    提高了索引推荐的准确性；
+    通过多任务学习实现了功能感知的数据库调优，
+    并为慢查询提供了在线索引推荐服务；
+    构建了面向事务数据库的多异常数据生成系统(DB-MAGS)。
+    这些研究将机器学习、多任务学习等AI技术与数据库优化深度融合，
+    实现了数据库系统的智能化管理，显著提升了系统的自动化运维能力和性能优化效果。
+  image: "/images/projects/1.png" # 项目图片
+  papers: # Publication List
+    - venue: "ICDE 2025" # 期刊
+      title: "Learning from the Past: Adaptive Parallelism Tuning for Stream Processing Systems" # 标题
     - venue: "PVLDB 2025"
-      url: "https://arxiv.org/abs/2504.11756"
       title: "AQETuner: Reliable Query-level Configuration Tuning for Analytical Query Engines"
-      authors: "Lixiang Chen, Yuxing Han, Yu Chen, Xing Chen, Chengcheng Yang, Weining Qian"
-      abstract: "Modern analytical query engines (AQEs) are essential for large-scale data analysis and processing. These systems usually provide numerous query-level tunable knobs that significantly affect individual query performance. While several studies have explored automatic DBMS configuration tuning, they have several limitations to handle query-level tuning. Firstly, they fail to capture how knobs influence query plans, which directly affect query performance. Secondly, they overlook query failures during the tuning processing, resulting in low tuning efficiency. Thirdly, they struggle with cold-start problems for new queries, leading to prolonged tuning time. To address these challenges, we propose AQETuner, a novel Bayesian Optimization-based system tailored for reliable query-level knob tuning in AQEs. AQETuner first applies the attention mechanisms to jointly encode the knobs and plan query, effectively identifying the impact of knobs on plan nodes. Then, AQETuner employs a dual-task Neural Process to predict both query performance and failures, leveraging their interactions to guide the tuning process. Furthermore, AQETuner utilizes Particle Swarm Optimization to efficiently generate high-quality samples in parallel during the initial tuning stage for the new queries. Experimental results show that AQETuner significantly outperforms existing methods, reducing query latency by up to 23.7% and query failures by up to 51.2%."
-      github: "https://gitfront.io/r/ml4tuning/aoR8ReCrj4a7/aqetuner/"
     - venue: "SIGMOD '24"
-      url: "https://dl.acm.org/doi/abs/10.1145/3626246.3653376"
       title: "ByteCard: Enhancing ByteDance’s Data Warehouse with Learned Cardinality Estimation"
-      authors: "Yuxing Han, Haoyu Wang, Lixiang Chen, Yifeng Dong, Xing Chen, Benquan Yu, Chengcheng Yang, Weining Qian"
-      abstract: "Cardinality estimation is a critical component and a longstanding challenge in modern data warehouses. ByteHouse, ByteDance's cloud-native engine for extensive data analysis in exabyte-scale environments, serves numerous internal decision-making business scenarios. With the increasing demand for ByteHouse, cardinality estimation becomes the bottleneck for efficiently processing queries. Specifically, the existing query optimizer of ByteHouse uses the traditional Selinger-like cardinality estimator, which can produce substantial estimation errors, resulting in suboptimal query plans.\n\nTo improve cardinality estimation accuracy while maintaining a practical inference overhead, we develop a framework ByteCard that enables efficient training and integration of learned cardinality estimators. Furthermore, ByteCard adapts recent advances in cardinality estimation to build models that can balance accuracy and practicality (e.g., inference latency, model size, training overhead). We observe significant query processing speed-up in ByteHouse after replacing the existing cardinality estimator with ByteCard for several optimization scenarios. Evaluations on real-world datasets show the integration of ByteCard leads to an improvement of up to 30% in the 99th quantile of latency. At last, we share our valuable experience in engineering advanced cardinality estimators. This experience can help ByteHouse integrate more learning-based solutions on the critical query execution path in the future."
     - venue: "ICDE 2025"
-      url: "https://www.computer.org/csdl/proceedings-article/icde/2025/360300b565/26FZAbicw2A"
       title: "Hyper: hybrid physical design advisor with multi-agent reinforcement learning. "
-      authors: "Z Pan, Y Zhang, C Yang*, A Ghazal, R Zhang, H Hu, X Wu, Y Dong, X Zhou"
-      abstract: "Various physical design (PD) options within a single database have emerged to optimize diverse workloads, including row-based PDs (e.g., index) and column-based PDs (e.g., columnstore replica), each with its own acceleration advantages for different workloads. Determining the optimal combination of these two PDs is a labor-intensive and challenging task, yet it could result in significant performance improvements for the system. Recent automated index advisors (AIAs) have concentrated on identifying the most advantageous combination of row-based PDs. However, the extension of these efforts to the present problem has proven challenging due to 1) the larger search space of hybrid PD selections, 2) the inadequate consideration of the complex interactions between heterogeneous PDs, and 3) the inaccurate evaluation made by the what-if optimizer. To address these issues, we propose a Hybrid physical design advisor (Hyper) with multi-agent reinforcement learning. Hyper excels at recommending the optimal combination of PDs under any specific workload, with an overarching emphasis on both efficiency and quality. Comprehensive evaluations on well-established benchmarks show that our approach outperforms state-of-the-art methods."
     - venue: "ICDE 2023"
-      url: "https://ieeexplore.ieee.org/abstract/document/10184519"
       title: "Workload-Aware Log-Structured Merge Key-Value Store for NVM-SSD Hybrid Storage"
-      authors: "Lixiang Chen, Ruihao Chen, Chengcheng Yang, Yuxing Han, Rong Zhang, Xuan Zhou, Peiquan Jin & Weining Qian"
-      abstract: "The log-structured merge tree (LSM-tree) has been widely adopted as a backbone of modern key-value stores. However, the multiple exponentially increased levels of LSM-tree makes it suffer from high write amplification. Existing studies often improve the write performance by sacrificing the read performance, which is inefficient to make trade-offs between the update and search efficiency. In this paper, we exploit nonvolatile memory (NVM) to address the write amplification issue for systems with NVM-SSD hybrid storage, and further propose a reinforcement learning method to navigate between update and search efficiency on the varying workloads. Specifically, we first propose a lightweight hot data identification method to efficiently capture access recency as well as frequency in NVM with relative large capacity. On this basis, we can eliminate different versions of frequently updated data in high-performance NVM without pushing them to SSD. To improve the data access locality and facilitate fine-grained index tuning in each level, we devise a virtual-split method to partition the key space gradually without extra write amplification. Finally, we propose a cost based Q-learning algorithm to adaptively tune the data organizations of each partition according to the changing access patterns. Experimental results show that our approach outperforms existing methods by up to 2.67×."
-      keywords: 
-        - Q-learning
-        - Costs
-        - Nonvolatile memory
-        - Navigation
-        - Organizations
-        - Data engineering
-        - Partitioning algorithms
     - venue: "ECML PKDD 2024"
-      url: "https://link.springer.com/chapter/10.1007/978-3-031-70362-1_22"
       title: "LATuner: An LLM Enhanced Database Tuning System Based on Adaptive Surrogate Model"
-      authors: "Chongjiong Fan, Zhicheng Pan, Wenwen Sun, Chengcheng Yang, Wei Neng Chen"
-      abstract: "Database Management Systems (DBMSs) offer a plethora of configurable parameters—termed “knobs”—that control the system behavior. Identifying the optimal configuration for these knobs, i.e., Knob Tuning (KT) is acknowledged as a critical way to enhance the DBMS performance. However, the increasing number of adjustable knobs and the complexity inherent in KTs have rendered manual tuning an antiquated and impractical approach. Recently, automatic KTs based on Machine Learning (ML) techniques have demonstrated significant potentials. Despite the advancements, they are also hindered by notable drawbacks such as the lack of domain knowledge and low tuning efficiency. Meanwhile, Large Language Model (LLM), which is pre-trained on diverse corpora including web content, database manuals, could offer a novel, training-free approach to significantly mitigate the aforementioned issues. In light of this, we propose an LLM-enhanced dAtabase Tuner, called LATuner. Firstly, since KT often suffers from the cold-start problem, we harness the extensive domain knowledge of LLMs to identify critical knobs and to warm start the tuning process, thus obtaining high-quality training samples. Secondly, as KT requires multiple rounds of sampling during the training process, we leverage LLMs to guide the sampling procedure, accelerating the convergence of the model training. Finally, to balance the tuning cost and efficiency between LLM-based KT and traditional ML-based KT, we design an adaptive surrogate strategy based on multi-armed bandit, achieving cost-effective tuning performance. Extensive experiments performed on well-established benchmarks have proven the efficacy and superiority of our proposal."
-      github: "https://github.com/fanchongjion/LATuner"
     - venue: "ICDE 2025"
-      url: "https://www.computer.org/csdl/proceedings-article/icde/2025/360300d807/26FZC51tvRC"
       title: "Rabbit: retrieval-augmented generation enables better automatic database knob tuning"
-      authors: "W Sun, Z Pan, Z Hu, Y Liu, C Yang*, R Zhang, X Zhou"
-      abstract: "The large language model (LLM)-based knob tuning method has attracted considerable attention due to its excellent in-context learning ability and generalizability. However, the existing LLM-based tuning methods do not effectively harmonize multi-source external knowledge, leading to missed opportunities for enhanced knob tuning. In light of this, we propose Rabbit, a novel approach that leverages retrieval-augmented generation to enhance database knob tuning tools, which seamlessly integrates structured historical tuning experience with graph-encoded static knowledge. First, we introduce an experience-driven knob selection strategy, enhanced by dependency-aware external knowledge integration, to systematically select key knobs. Second, we develop a cutting-edge multi-agent knob domain pruning method, which ensures the reduced search space remains compact yet effective. Finally, we leverage the few-shot capabilities of LLMs to act as surrogate models, enabling rapid exploration of the pruned search space, followed by incremental optimization that expands the search space using historical insights. Moreover, we also design an adaptive strategy to transition between these two search spaces, striking an optimal balance between exploration and exploitation. Extensive experiments on well-established benchmarks demonstrate that Rabbit outperforms the state-of-the-art methods in both effectiveness and efficiency, pointing to a new paradigm for this area."
-- id: DBHammer
+- id: "DBHammer"
   title: "数据库测试与评测"
-  description: "1.	面向数据库系统查询优化的负载生成：早在2018年，实验室提出了Touchstone，实现了高效的查询感知型数据生成，使得TPC-H负载下的数据生成速度大幅提升1000倍，为后续分析型算子的优化奠定了深厚研究基础；为了进一步扩大在复杂查询算子下的场景生成能力，Touchstone+提出了面向匹配运算符的负载生成技术；紧接着，Mirage设计了更合理的处理架构，使得面向复杂负载的场景生成技术在算子的支持度上达到了新高度；\n\n2.	面向事务处理性能调优的负载生成：2022年，实验室在面向事务负载性能优化领域提出了基于事务执行运行时关键特征的建模技术，突破了事务型应用场景仿真的难题，首次提供了面向事务型应用场景的负载生成技术，为推动事务处理性能优化做出了贡献。\n\n3.	面向新型数据库场景的评测基准：实验室设计并实现了一系列评测基准。2020年研发出密集型事务处理评测技术，针对秒杀场景等高冲突环境实现了竞争度的细粒度可控; 2023年实验室研发出面向分布式事务型数据库系统的评测基准Dike。同时，为满足分析型数据库系统在复杂连接算子下的性能评测和调优需求，实验室推出了Artemis自动化测试套件，实现了OLAP数据库功能测试的数据、负载与结果自动生成。\n\n4.	数据库系统事务处理可扩展正确性验证：2023年实验室开发的Leopard，第一次从隔离级别的内核实现出发，完成了可扩展的通用隔离级别验证框架的实现；2024年， 提出了专注于隔离级别高效测试案例生成的DBStorm生成框架，通过冲突图生成和异常敏感的冲突注入机制，并引入软件工程领域的蜕变技术，完成了可扩展大规模高测试效用的事务负载生成，并成功揭示多个主流数据库系统的实现缺陷，受到主流数据库厂商的关注。"
-  image: "/images/DBHammer.png"
+  description: >
+    该类型研究致力于构建高效、全面的数据库系统评估方法与工具，
+    以支撑数据库性能调优、正确性验证及新型场景适配。
+    实验室在负载生成技术方面，实现了高效的面向数据库系统查询优化的负载生成，
+    以及面向事务处理性能调优的负载生成；在评测基准方面，
+    研发出面向分布式事务的评测基准Dike及OLAP自动测试套件Artemis；
+    在事务处理正确性验证方向，开发了可扩展的通用隔离级别验证框架Leopard和高效测试案例生成框架DBStorm。
+    这些成果大幅提升了数据库测试的覆盖范围与效率，成功揭示了多个主流数据库系统的实现缺陷，受到工业界广泛关注。
+  image: "/images/projects/2.png"
   papers:
     - venue: "USENIX ATC 2018"
-      url: "https://www.usenix.org/conference/atc18/presentation/li-yuming"
       title: "Touchstone: Generating Enormous Query-Aware Test Databases"
-      authors: "Yuming Li, Rong Zhang, Xiaoyan Yang, Zhenjie Zhang, Aoying Zhou"
-      abstract: "Query-aware synthetic data generation is an essential and highly challenging task, important for database management system (DBMS) testing, database application testing and application-driven benchmarking. Prior studies on query-aware data generation suffer common problems of limited parallelization, poor scalability, and excessive memory consumption, making these systems unsatisfactory to terabyte scale data generation. In order to fill the gap between the existing data generation techniques and the emerging demands of enormous query-aware test databases, we design and implement our new data generator, called Touchstone. Touchstone adopts the random sampling algorithm instantiating the query parameters and the new data generation schema generating the test database, to achieve fully parallel data generation, linear scalability and austere memory consumption. Our experimental results show that {\em Touchstone} consistently outperforms the state-of-the-art solution on TPC-H workload by a 1000× speedup without sacrificing accuracy."
     - venue: "TKDE 2022"
-      url: "https://ieeexplore.ieee.org/abstract/document/9720100/"
       title: "A Scalable Query-Aware Enormous Database Generator for Database Evaluation"
-      authors: "Qingshuai Wang, Yuming Li, Rong Zhang, Ke Shu, Zhenjie Zhang, Aoying Zhou"
-      abstract: "Query-aware synthetic data generation is an essential and highly challenging task, important for database management system (DBMS) testing, database application testing and application-driven benchmarking. Prior studies on query-aware data generation suffer common problems of limited parallelization, poor scalability, and excessive memory consumption, making these systems unsatisfactory to terabyte scale data generation. In order to fill the gap between the existing data generation techniques and the emerging demands of enormous query-aware test databases, we design and implement a new data generator, called Touchstone. Touchstone adopts the random sampling algorithm instantiating query parameters and the new data generation schema generating the test database, to achieve fully parallel data generation, linear scalability and austere memory consumption. It has full support of outer joins as well as non-equi-joins for application-oriented data generation. Our experimental results show that Touchstone consistently outperforms the state-of-the-art solution on TPC-H workload by a 1000× speedup without sacrificing simulation fidelity."
-      keywords:
-        - Query-aware data generator
-        - OLAP database testing
-        - query generator
     - venue: "DASFAA 2024"
-      url: "https://link.springer.com/chapter/10.1007/978-981-97-5552-3_18"
       title: "Touchstone+ : Query Aware Database Generation for Match Operators"
-      authors: "Hao Li, Qingshuai Wang, Zirui Hu, Xuhua Huang, Lv Ni, Rong Zhang, Xuan Zhou, Quanqing Xu"
-      abstract: "Query-aware database generator (QAGen) expects to generate an application scenario based on the anonymized query plans as well as the cardinality constraints of all operators. It prefers to have the similar performance to the in-production real performance if applying the generated workload on the generated database. Touchstone is the first work achieving simulating the application with the first 16 queries in TPC-H. However, it is designed based on heuristic rules, and has a weak ability to guarantee the cardinality constraints from match operators, i.e., IN and LIKE, which are important operators for performance optimization. So in this paper, we propose Touchstone+ to solve the problem QAGen involving match operators by modeling constraints from IN and LIKE into a Constraint Programming (CP) problem. After solving the CP problem, it provides an initial data distribution satisfying cardinality constraints from all match operators for the iterative parameter search algorithm of Touchstone. Experiments have verified the effectiveness of our design and we also open code sources for reproducing all results."
-      github: "https://github.com/DBHammer/Touchstone-plus"
     - venue: "ICDE 2024"
-      url: "https://ieeexplore.ieee.org/abstract/document/10597682"
       title: "Mirage: Generating Enormous Databases for Complex Workloads"
-      authors: "Qingshuai Wang, Hao Li, Zirui Hu, Rong Zhang, Chengcheng Yang, Peng Cai, Xuan Zhou, Aoying Zhou"
-      abstract: "To optimize query parallelism techniques, substantial workloads are required with specific query plans and customized output size for each operator (denoted as cardinality constraint). To this end, a rich body of query-aware database generators (QAG) are proposed. However, the complex data dependencies hidden behind queries make previous QAGs suffer from deficiencies in supporting complex operators and controlling the generation errors. In this paper, we design a new generator Mirage supporting well for complex operators with low error bounds for cardinality constraints. First, Mirage leverages Query Rewriting and Set Transforming Rules to decouple dependencies between key and non-key columns, which could help generate each of them individually. Then, for the non-key columns, Mirage abstracts cardinality constraints of operators as placement requirements within each column's domain, and further models the generation problem as a classic bin packing problem. Finally, for the key columns, Mirage proposes a uniform representation of join cardinality constraints for all types of PK-FK joins and partitions the data according to the matching status between PK and F K columns. Then, it formulates the key population as a Constraint Programming problem, which can be solved by an existing CP Solver. The experiments show that Mirage conquers all previous work in either operator support or generation error."
-      keywords:
-        - Constraint handling
-        - Databases
-        - Sociology
-        - Parallel processing
-        - Data engineering
-        - Generators
-        - Statistics
     - venue: "SIGMOD '25"
-      url: "https://dl.acm.org/doi/abs/10.1145/3722212.3725076"
       title: "A Query-Aware Enormous Database Generator For System Performance Evaluation"
-      authors: "Xuhua Huang, Zirui Hu, Siyang Weng, Rong Zhang, Chengcheng Yang, Xuan Zhou, Weining Qian, Quanqing Xu, Chuanhui Yang"
-      abstract: "In production, simulating the real application without exposing the privacy data is essential for database benchmarking or performance debugging. A rich body of query-aware database generators (QAG) are proposed for this purpose. The complex data dependencies hidden behind queries make previous work suffer from critical deficiencies in supporting complex operators with high simulation accuracy. To fill the gap between the existing QAGs and the urgent demands, we implement a data generator Mirage with the attractive characteristics of reproducing applications based on the queries even with complex operators and having a theoretical zero error. Specifically,Mirage leverages Query Rewriting and Set Transforming Rules to decouple the implicit dependencies from queries, which greatly simplify the generation problem; it presents a uniform representation of various join types and formulates key population as a Constraint Programming (CP) problem, which can be well solved by an off-the-shelf CP Solver. In this demonstration, users can explore the core features of Mirage in generating synthetic databases, which has the widest support to operators and the best simulation fidelity compared to the related work."
-      keywords:
-        - Database Generation
-        - Performance Benchmarking
     - venue: "ICDE 2022"
-      url: "https://ieeexplore.ieee.org/abstract/document/9835481"
       title: "Application-Oriented Workload Generation for Transactional Database Performance Evaluation"
-      authors: "Luyi Qu, Yuming Li, Rong Zhang, Ting Chen, Ke Shu, Weining Qian, Aoying Zhou"
-      abstract: "Generating synthetic workloads is essential and critical to performance evaluation of database systems. When evaluating database performance for a specific application, the similarity between synthetic workloads and real application workloads determines the credibility of the evaluation results. However, it meets a great challenge to catch workload characteristics with respect to a target application considering the complexity of transaction executions. To address this problem, we propose a workload duplicator (Lauca) that can generate synthetic workloads with highly similar performance metrics compared to the real workloads of a specific application. By carefully studying the application-oriented workload generation problem, we present Transaction Logic and Data Access Distribution to characterize workloads of online transaction processing (OLTP) applications, and propose novel generation algorithms to guarantee the high fidelity of synthetic workloads. To the best of our knowledge, Lauca is the first application-oriented transactional workload generator. We conduct extensive experiments based on TPCC, SmallBank and YCSB on both centralized and distributed databases. The experimental results show that Lauca consistently generates high quality synthetic workloads."
-      keywords:
-        - Performance evaluation
-        - Conferences
-        - Distributed databases
-        - Data engineering
-        - Generators
-        - Database systems
-        - Complexity theory
     - venue: "TKDE 2024"
-      url: "https://ieeexplore.ieee.org/abstract/document/10416761"
       title: "Lauca: A Workload Duplicator for Benchmarking Transactional Database Performance"
-      authors: "Siyang Weng, Qingshuai Wang, Luyi Qu, Rong Zhang, Peng Cai, Weining Qian, Aoying Zhou"
-      abstract: "Generating synthetic workloads is essential and critical to the performance evaluation of database systems. When benchmarking database performance for a specific application, the similarity between synthetic workloads and real application workloads determines the credibility of the evaluation results. However, it meets a great challenge to catch workload characteristics for a target online transaction processing (OLTP) application considering the complexity of transaction executions. To address this problem, we propose a workload duplicator (Lauca) that can generate synthetic workloads with highly similar performance metrics compared to a specific application on both centralized and distributed databases. By carefully studying the application-driven workload generation problem, we present Transaction Logic, Data Access Distribution and Partition Access Distribution to characterize runtime workloads and propose novel generation algorithms to guarantee the high fidelity of synthetic workloads. To the best of our knowledge, Lauca is the first application-driven transactional workload generator. We conduct extensive experiments based on TPC-C, SmallBank and YCSB on both centralized and distributed databases. The experimental results show that Lauca consistently generates high-quality synthetic workloads."
-      keywords:
-        - Databases
-        - Benchmark testing
-        - Runtime
-        - Distributed databases
-        - Throughput
-        - Semantics
-        - Performance evaluation
     - venue: "Frontiers of Computer Science 2020"
-      url: "https://link.springer.com/article/10.1007/s11704-019-8438-0"
       title: "Benchmarking on intensive transaction processing"
-      authors: "Chunxi Zhang, Yuming Li, Rong Zhang, Weining Qian, Aoying Zhou"
-      abstract: "Benchmarks play a crucial role in database performance evaluation, and have been effectively promoting the development of database management systems. With critical transaction processing requirements of new applications, we see an explosion of innovative database technologies for dealing with highly intensive transaction workloads (OLTP) with the obvious characteristics of sharp dynamics, terrificskewness, high contention, or high concurrency (abbr. DSC2), which can not be well described or evaluated by current standard benchmarks. In this paper, based on the representative SecKill applications, we define a pacakge of workloads simulating intensive transactional processing requirements. And we create a general and flexible benchmark framework PeakBench for evaluating intensive OLTP workloads on databases. We are the first work to have full control on simulating DSC2, especially for the fine granularity control for contention generation. With a comprehensive set of experiments conducted on popular open sourced DBMSs compared with the other representative OLTP benchmarks, we completely demonstrate the usefulness of PeakBench."
-      keywords:
-        - benchmark
-        - transaction processing
-        - intensive workloads
-        - evaluation
     - venue: "SIGMOD '2023"
-      url: "https://dl.acm.org/doi/abs/10.1145/3555041.3589710"
       title: "Dike: A Benchmark Suite for Distributed Transactional Databases"
-      authors: "Huidong Zhang, Luyi Qu, Qingshuai Wang, Rong Zhang, Peng Cai, Quanqing Xu, Zhifeng Yang, Chuanhui Yang"
-      abstract: "Distributed relational database management systems (abbr. DDBMSs) for online transaction processing (abbr. OLTP) have been gradually adopted in production environments. With many relevant products vying for the markets, an unbiased benchmark is urgently needed to promote the development of transactional DDBMSs. Current benchmarks for OLTP applications have not taken the challenges encountered during the designs and implementations of a transactional DDBMS into consideration, which expects to provide high elasticity and availability as well as high throughputs. We propose a benchmark suite Dike to evaluate the efforts to tackle these challenges. Dike is designed mainly from three aspects: quantitative control to evaluate scalability, imbalanced distribution to evaluate schedulability, and comprehensive fault injections to evaluate availability. It also provides a dynamic load control to simulate real-world scenarios. In this demonstration, users can experience core features of Dike with user-friendly interfaces."
     - venue: "ICDE 2025"
-      url: "https://www.computer.org/csdl/proceedings-article/icde/2025/360300e628/26FZD0CCVji"
       title: "Artemis: A Customizable Workload Generation Toolkit for Benchmarking Cardinality Estimation"
-      authors: "Zirui Hu, Rong Zhang, Chengcheng Yang, Xuan Zhou, Quanqing Xu, Chuanhui Yang"
-      abstract: "Cardinality Estimation (CardEst) is crucial for query optimization. Despite the remarkable achievement in DBMS, there is a pressing need to test or tune the work of CardEst. To satisfy the need, we introduce Artemis, a customizable workload generator, which can be used to generate various scenarios with the sensitive features for CardEst, including various data dependencies, complex SQL structures, and diverse cardinalities. It designs a PK-oriented deterministic data generation mechanism to plot various data characteristics; a search-based workload generation is proposed for composing queries with various complexities; it takes a constraint optimization-guided way to achieve a cost-effective cardinality calculation. In this demonstration, users can explore the core features of Artemis in generating workloads."
     - venue: "ICDE 2023"
-      url: "https://ieeexplore.ieee.org/abstract/document/10184872"
       title: "Leopard: A Black-Box Approach for Efficiently Verifying Various Isolation Levels"
-      authors: "Keqiang Li, Siyang Weng, Peiyuan Liu, Lyu Ni, Chengcheng Yang, Rong Zhang, Xuan Zhou, Jianghang Lou, Gui Huang, Weining Qian, Aoying Zhou"
-      abstract: "Isolation Levels (IL) act as correct contracts between applications and database management systems (DBMSs). The complex code logic and concurrent interactions among transactions make it a hard problem to expose violations of various ILs stated by DBMSs. With the recent proliferation of new DBMSs, especially the cloud ones, there is an urgent demand for a general way to verify various ILs. The core challenges come from the requirements of: (a) lightweight (verifying without modifying the application logic in workloads and the source code of DBMSs), (b) generality (verifying various ILs), and (c) efficiency (performing efficient verification on a long running workload). For lightweight, we propose to deduce transaction dependencies based on time intervals of operations collected from client-sides without touching the source code of DBMSs. For generality, based on a thorough analysis of existing concurrency control protocols, we summarize and abstract four mechanisms which can implement ILs in all commercial DBMSs we have investigated. For efficiency, we design a two-level pipeline to organize and sort massive time intervals in a time and memory conservative way; we propose a mechanism-mirrored verification to simulate the concurrency control protocols implemented in DBMSs for high throughputs. Leopard outperforms existing methods by up to 114× in verification time with a relative small memory usage. In practice, Leopard has a superpower to verify various ILs on any workload running on all commercial DBMSs. Moreover, it has successfully discovered 23 bugs that cannot be found by other existing methods."
     - venue: "ISSTA 2024"
-      url: "https://dl.acm.org/doi/abs/10.1145/3650212.3680318"
       title: "DBStorm: Generating Various Effective Workloads for Testing Isolation Levels"
-      authors: "Keqiang Li, Siyang Weng, Lyu Ni, Chengcheng Yang, Rong Zhang, Xuan Zhou, Aoying Zhou"
-      abstract: "Isolation level (IL) acts as a correctness contract between applications and DBMSs. Problematic IL implementations would cause incorrect transaction execution results and erroneous database states. However, existing studies could not efficiently generate various effective workloads for IL test. The core challenges come from the requirements of (a) black-box testing (trigger the IL code of a closed source DBMS), (b) effective testing (evade redundant and ineffective testing), and (c) anomaly-sensitive testing (test various ILs in a distinguishable way). For black-box testing, we investigate the IL implementations of 15 popular DBMSs and discover that they follow a generic framework that utilizes conflict graphs to manage all conflicts of a workload, and performs a verification policy to prevent non-serializable anomalies. For effective testing, we propose a lightweight data state mirroring method, which helps generate SQL operations that precisely access its expected records and participate the formation of specific conflict graphs. We also propose an efficient history-independent approach to generate dissimilar conflict graphs. It guarantees the graph generation overhead is irrelevant to the scale of historical graphs. For anomaly-sensitive testing, we propose an implantation-based approach to orchestrate conflict record accesses and inject them into different transactions according to the anomaly definition. Our approach outperforms existing approaches in testing effectiveness, efficiency, and coverage. Practically, we have successfully found 33 bugs in popular DBMSs."
-- id: DMIC
-  title: "面向AI的数据管理系统"
-  description: "（1）支持AI预测查询的数据管理系统：随着智能时代的到来，分析查询从传统SQL逐步发展成为含有利用智能计算框架进行推理的预测查询，然而数据管理系统与智能计算框架之间存在一定壁垒：一方面，数据管理系统可能无法支持预测查询；另一方面，即便能够支持预测查询，在执行过程中运行时不匹配也存在严重的性能损失。我们与蚂蚁OceanBase、PingCAP等企业合作开展研究，初步成果在SIGMOD、ICDE上得到发表。\n\n（2）基于大数据平台的机器学习系统：大数据处理平台在机器学习等场景中广泛应用，基于Spark等大数据处理平台构建分布式机器学习系统是基本共识。机器学习算法通常可以表达为一系列的矩阵运算，这些运算可以翻译执行计划并进行优化。我们结合机器学习算法的特点，设计了针对迭代式矩阵运算的混合计算、冗余消解技术，相关研究成果连续发表在数据管理领域顶级学术会议SIGMOD、VLDB，研制的机器学习系统性能与现有系统相比得到显著提升。"
-  image: "/images/DMIC.png"
+- id: "DMIC"
+  title: "面向AI的数据基架"
+  description: >
+    该类型研究聚焦数据库系统、深度学习系统、大数据处理系统等基础软件系统的性能瓶颈，
+    研发支持智能时代数据管理的基础软件系统。主要成果包括：
+    设计高性能的支持AI预测查询的数据管理系统，如IMBridge；
+    在算法特性、硬件架构等方面优化深度学习系统，如HyInJ、RECS；
+    通过优化迭代式矩阵运算来优化基于大数据平台的机器学习系统，如ReMac、HyMAC。
+    这些工作从上层应用、底层硬件等多角度出发，着力提升软件系统的执行效率。
+    研究工作得到国家和上海市科技计划，以及蚂蚁、腾讯、PingCAP等合作企业的支持。
+  image: "/images/projects/3.png"
   papers:
     - venue: "SIGMOD '25"
-      url: "https://dl.acm.org/doi/abs/10.1145/3725326"
       title: "Mitigating the Impedance Mismatch between Prediction Query Execution and Database Engine"
-      authors: "Chenyang Zhang, Junxiong Peng, Chen Xu*, Quanqing Xu, Chuanhui Yang"
-      abstract: "Prediction queries that apply machine learning (ML) models to perform analysis on data stored in the database are prevalent with the advance of research. Current database systems introduce Python UDFs to express prediction queries and call ML frameworks for inference. However, the impedance mismatch between database engines and prediction query execution imposes a challenge for query performance. First, the database engine is oblivious to the internal semantics of prediction functions and evaluates the UDF holistically, which incurs the repetitive inference context setup. Second, the invocation of prediction functions in the database does not consider that batching inference with a desirable inference batch size achieves a high performance in ML frameworks. To mitigate the mismatch, we propose to employ a prediction-aware operator in database engines, which leverages inference context reuse cache to achieve an automatic one-off inference context setup and batch-aware function invocation to ensure desirable batching inference. We implement a prototype system, called IMBridge, based on an open-source database OceanBase. Our experiments show that IMBridge achieves a 71.4x speedup on average over OceanBase for prediction query execution and significantly outperforms other solutions."
     - venue: "SIGMOD '24"
       title: "Impedance Mismatch Mitigation between Database Engine and Prediction Query Execution"
     - venue: "ICDE 2025"
       title: "Machine Learning Inference Pipeline Execution Using Pure SQL Based on Operator Fusion"
+    - venue: "PPoPP 2023"
+      title: "Elastic Averaging for Efficient Pipelined DNN Training"
+    - venue: "ICDE 2024"
+      title: "Hybrid Evaluation for Occlusion-based Explanations on CNN Inference Queries"
+    - venue: "SIGMOD '25"
+      title: "Scheduling Data Processing Pipelinesfor Incremental Training on MLP-based Recommendation Models"
     - venue: "SIGMOD '22"
       title: "Redundancy Elimination in Distributed Matrix Computation"
     - venue: "VLDB 2022"
@@ -172,10 +93,19 @@
       title: "Hybrid Evaluation for Distributed Iterative Matrix Computation"
     - venue: "VLDB 2021"
       title: "HyMAC: A Hybrid Matrix Computation System"
-- id: Cedar
+- id: "Cedar"
   title: "分布式与云原生数据库"
-  description: "（1）团队研发的分布式数据库系统 Cedar 具备高通量、高性能、高可用等特性，解决了大型银行、电信等行业的互联网级关键核心业务对数据库系统的需求。为了满足关键核心业务互联网化对系统扩展性和数据一致性的双重要求，Cedar 采用了读写分离的高并行系统架构，并在此架构的基础之上重新设计和实现了数据库的查询处理和事务处理功能。针对关键业务的高可用需求，Cedar 系统在读写分离的架构上又引入一主多备的多活架构。\n\n（2）SlimStore 是一种基于云的智能备份存储架构，通过将系统分为存储层和计算层，弹性利用云资源优化数据去重和恢复。它采用两种节点设计：L节点：针对新备份版本，利用局部性和历史感知策略，实现快速去重和高效恢复；G节点：针对旧备份版本，提供精确离线去重，优化存储成本并提升新版本恢复性能。实验表明，SlimStore在去重速度、恢复效率和存储节省方面优于现有方案，同时具备弹性扩展能力。\n\n（3）面向分布式事务系统，提出 HAWK：一种受负载驱动的层级式死锁检测机制，通过根据并发事务的工作负载动态调整检测策略，实现快速、低开销的死锁发现，并显著提升系统在复杂负载下的吞吐能力（VLDB 2025）；\n\n（4）面向数据库元数据管理，构建了FDBKeeper：一种基于分布式 KV 存储（FoundationDB）的高可扩展协调服务平台。其能提供事务级一致的锁管理与配置同步，支持高并发环境下的容错与线性扩展，现今已成功嵌入 ClickHouse 等系统中（VLDB 2025）；\n\n（5）面向亿万节点图数据处理，推出 RedTAO，一种支持万亿边级图存储与高吞吐查询的分布式图引擎。它优化了图数据的存储布局和并行处理机制，实现了超大规模图遍历与更新任务的高效执行（SIGMOD 2025）；\n\n（6）面向 HTAP 混合事务与分析系统，设计了Log Replaying for Real-Time HTAP，一种采用基于Epoch的两阶段日志重放框架，实现了事务日志的并行回放，提高系统在并发事务与实时查询场景下的一致性保障和吞吐能力（ICDE 2024）。"
-  image: "/images/cedar.png"
+  description: >
+    该类型研究通过分布式架构和云原生技术实现数据库的高扩展性、高可用性、弹性伸缩及跨环境部署，
+    以应对海量数据存储与实时处理需求。
+    主要成果包括：针对分布式数据库系统设计了工作负载驱动的分层死锁检测方法(HAWK)，
+    解决了大规模分布式环境下的死锁问题；
+    开发了可扩展的元数据管理协调服务(FDBKeeper)和万亿级边的高吞吐图存储系统(RedTAO)；
+    提出了面向更新密集型工作负载的自适应LSM引擎(SylphDB)和实时HTAP的日志重放框架；
+    在并发控制方面，实现了适应异构工作负载的自适应乐观并发控制机制。
+    这些工作从死锁检测、元数据管理、图数据处理、
+    存储引擎优化到并发控制等多个维度提升了分布式数据库系统的性能和可靠性。
+  image: "/images/projects/4.png"
   papers:
     - venue: "USENIX ATC '18"
       title: "Solar: Towards a Shared-Everything Database on Distributed Log-Structured Storage"
@@ -194,9 +124,16 @@
     - venue: "VLDB 2019"
       title: "Adaptive Optimistic Concurrency Control for Heterogeneous Workloads"
 - id: "PG-RAC"
-  title: "高性能数据处理技术"
-  description: "PG-RAC是一种多写可扩展共享缓存数据库，其特点为集群中任一节点可访问共享缓冲区，并通过日志复制实现跨节点事务一致性能力，解决了多主写入下的事务冲突与一致性问题。\n\nHockey是一种专为混合PMem-SSD存储而设计的高效列存储引擎，作为一种新颖的存储设备，Persistent Memory(PMem)为混合存储提供了一个新的有前途的选择。Hockey设计了一种专为PMem-SSD混合存储优化的列式存储引擎。该系统通过创新性地设计PMem上的数据与元数据结构、优化访问模式，并制定智能数据放置策略，有效解决了混合存储设备间的性能差异问题。实验表明，Hockey在SSB基准测试中显著优于传统存储引擎，实现了查询性能的大幅提升。"
-  image: "/images/PG.png"
+  title: "高性能数据处理技术（包括新硬件和in memory OLAP）"
+  description: >
+    该类型研究聚焦于利用新硬件与内存计算技术突破数据处理性能瓶颈。
+    主要成果包括：开发了多写可扩展共享缓存数据库PG-RAC，
+    通过全局日志复制与共享内存访问实现多节点事务一致性，
+    解决金融交易时高并发场景下的写入冲突问题；设计了混合PMem-SSD存储引擎Hockey，
+    创新构建PMem-SSD分层数据管理架构，结合智能数据分布策略，显著提升分析查询效率。
+    这些工作充分利用了硬件特性和内存计算的优势，大幅提升事务处理能力与分析响应速度，
+    为金融交易、实时分析等场景提供高性能技术支撑。
+  image: "/images/projects/5.jpg"
   papers:
     - venue: "CIKM 2022"
       title: "Hockey: A Hybrid PMem-SSD Storage Engine for Analytical Database"
@@ -204,14 +141,24 @@
       title: "Solar: Towards a Shared-Everything Database on Distributed Log-Structured Storage"
     - venue: "TOS 2019"
       title: "SolarDB: Toward a Shared-Everything Database on Distributed Log-Structured Storage"
-- id: DL
-  title: "深度学习系统性能优化"
-  description: "机器学习、人工智能是当下热门的名词，不少研究关注于准确率的因素大多数研究着力于提高训练结果的准确率。我们有所不同与大多数研究不同的是，我们着眼于如何提高机器学习训练、推理过程的处理速度。、\n\n（1）面向深度学习训练负载，我们的研究包括如何从算法特性、硬件架构等方面加速算法执行。最终，我们实现了分别在数据并行和流水并行的训练方式下开展性能优化工作，得到CCF-腾讯犀牛鸟基金、腾讯犀牛鸟精英人才计划等支持，研究成果发表在PPoPP、SIGMOD。\n\n（2）此外，面向深度学习推理负载，我们研究如何降低推理的延迟、提高吞吐量。除此之外，我们还关注如何将流计算系统等大数据处理系统和深度学习进行融合，从而高效地执行深度学习推理。相关研究工作发表在ICDE 2024。"
-  image: "/images/DL.png"
+- id: "DL"
+  title: "大语言模型优化数据分析管道"
+  description: >
+    该类型研究探索了大语言模型在数据分析自动化方面的应用。
+    主要成果包括：开发了基于大语言模型的自动化跨域探索性数据分析系统 TiInsight，
+    实现了数据分析流程的端到端自动化；
+    构建了统一的多智能体大语言模型表格问答系统(UNITQA)和自主表格问答系统(AutoTQA)，
+    大幅提升了结构化数据的问答能力；
+    设计了零样本自动探索性数据分析系统(Chat2Query)，让用户能够通过自然语言交互进行数据分析。
+    这些工作将大语言模型的自然语言理解能力与数据分析任务深度结合，
+    降低了数据分析的技术门槛，提升了数据分析的效率和准确性。
+  image: "/images/projects/6.png"
   papers:
-    - venue: "PPoPP 2023"
-      title: "Elastic Averaging for Efficient Pipelined DNN Training"
-    - venue: "ICDE 2024"
-      title: "Hybrid Evaluation for Occlusion-based Explanations on CNN Inference Queries"
+    - venue: "VLDB 2025"
+      title: "Towards Automated Cross-domain Exploratory Data Analysis through Large Language Models"
     - venue: "SIGMOD '25"
-      title: "Scheduling Data Processing Pipelinesfor Incremental Training on MLP-based Recommendation Models"
+      title: "UNITQA: A Unified Automated Tabular Question Answering System with Multi-Agent Large Language Models"
+    - venue: "VLDB 2024"
+      title: "AutoTQA: Towards Autonomous Tabular Question Answering through Multi-agent Large Language Models"
+    - venue: "ICDE 2024"
+      title: "Chat2Query: A Zero-Shot Automatic Exploratory Data Analysis System with Large Language Models"
