@@ -1,98 +1,3 @@
-- id: "AI4DB" # 内部ID
-  title: "AI4DB" # 项目名
-  description: > # 项目简介（可换行，实际显示时会忽略换行符）
-    将人工智能技术应用于数据库系统的自动化优化和管理。
-    主要成果包括：开发了面向分布域外工作负载的风险感知索引收益估算方法(Rainbow)，
-    提高了索引推荐的准确性；
-    通过多任务学习实现了功能感知的数据库调优，
-    并为慢查询提供了在线索引推荐服务；
-    构建了面向事务数据库的多异常数据生成系统(DB-MAGS)。
-    这些研究将机器学习、多任务学习等AI技术与数据库优化深度融合，
-    实现了数据库系统的智能化管理，显著提升了系统的自动化运维能力和性能优化效果。
-  image: "/images/projects/1.png" # 项目图片
-  papers: # Publication List
-    - venue: "ICDE 2025" # 期刊
-      title: "Learning from the Past: Adaptive Parallelism Tuning for Stream Processing Systems" # 标题
-    - venue: "PVLDB 2025"
-      title: "AQETuner: Reliable Query-level Configuration Tuning for Analytical Query Engines"
-    - venue: "SIGMOD '24"
-      title: "ByteCard: Enhancing ByteDance’s Data Warehouse with Learned Cardinality Estimation"
-    - venue: "ICDE 2025"
-      title: "Hyper: hybrid physical design advisor with multi-agent reinforcement learning. "
-    - venue: "ICDE 2023"
-      title: "Workload-Aware Log-Structured Merge Key-Value Store for NVM-SSD Hybrid Storage"
-    - venue: "ECML PKDD 2024"
-      title: "LATuner: An LLM Enhanced Database Tuning System Based on Adaptive Surrogate Model"
-    - venue: "ICDE 2025"
-      title: "Rabbit: retrieval-augmented generation enables better automatic database knob tuning"
-- id: "DBHammer"
-  title: "数据库测试与评测"
-  description: >
-    构建高效、全面的数据库系统评估方法与工具，
-    以支撑数据库性能调优、正确性验证及新型场景适配。
-    实验室在负载生成技术方面，实现了高效的面向数据库系统查询优化的负载生成，
-    以及面向事务处理性能调优的负载生成；在评测基准方面，
-    研发出面向分布式事务的评测基准Dike及OLAP自动测试套件Artemis；
-    在事务处理正确性验证方向，开发了可扩展的通用隔离级别验证框架Leopard和高效测试案例生成框架DBStorm。
-    这些成果大幅提升了数据库测试的覆盖范围与效率，成功揭示了多个主流数据库系统的实现缺陷，受到工业界广泛关注。
-  image: "/images/projects/2.png"
-  papers:
-    - venue: "USENIX ATC 2018"
-      title: "Touchstone: Generating Enormous Query-Aware Test Databases"
-    - venue: "TKDE 2022"
-      title: "A Scalable Query-Aware Enormous Database Generator for Database Evaluation"
-    - venue: "DASFAA 2024"
-      title: "Touchstone+ : Query Aware Database Generation for Match Operators"
-    - venue: "ICDE 2024"
-      title: "Mirage: Generating Enormous Databases for Complex Workloads"
-    - venue: "SIGMOD '25"
-      title: "A Query-Aware Enormous Database Generator For System Performance Evaluation"
-    - venue: "ICDE 2022"
-      title: "Application-Oriented Workload Generation for Transactional Database Performance Evaluation"
-    - venue: "TKDE 2024"
-      title: "Lauca: A Workload Duplicator for Benchmarking Transactional Database Performance"
-    - venue: "Frontiers of Computer Science 2020"
-      title: "Benchmarking on intensive transaction processing"
-    - venue: "SIGMOD '2023"
-      title: "Dike: A Benchmark Suite for Distributed Transactional Databases"
-    - venue: "ICDE 2025"
-      title: "Artemis: A Customizable Workload Generation Toolkit for Benchmarking Cardinality Estimation"
-    - venue: "ICDE 2023"
-      title: "Leopard: A Black-Box Approach for Efficiently Verifying Various Isolation Levels"
-    - venue: "ISSTA 2024"
-      title: "DBStorm: Generating Various Effective Workloads for Testing Isolation Levels"
-- id: "DMIC"
-  title: "面向AI的数据基架"
-  description: >
-    聚焦数据库系统、深度学习系统、大数据处理系统等基础软件系统的性能瓶颈，
-    研发支持智能时代数据管理的基础软件系统。主要成果包括：
-    设计高性能的支持AI预测查询的数据管理系统，如IMBridge；
-    在算法特性、硬件架构等方面优化深度学习系统，如HyInJ、RECS；
-    通过优化迭代式矩阵运算来优化基于大数据平台的机器学习系统，如ReMac、HyMAC。
-    这些工作从上层应用、底层硬件等多角度出发，着力提升软件系统的执行效率。
-    研究工作得到国家和上海市科技计划，以及蚂蚁、腾讯、PingCAP等合作企业的支持。
-  image: "/images/projects/3.png"
-  papers:
-    - venue: "SIGMOD '25"
-      title: "Mitigating the Impedance Mismatch between Prediction Query Execution and Database Engine"
-    - venue: "SIGMOD '24"
-      title: "Impedance Mismatch Mitigation between Database Engine and Prediction Query Execution"
-    - venue: "ICDE 2025"
-      title: "Machine Learning Inference Pipeline Execution Using Pure SQL Based on Operator Fusion"
-    - venue: "PPoPP 2023"
-      title: "Elastic Averaging for Efficient Pipelined DNN Training"
-    - venue: "ICDE 2024"
-      title: "Hybrid Evaluation for Occlusion-based Explanations on CNN Inference Queries"
-    - venue: "SIGMOD '25"
-      title: "Scheduling Data Processing Pipelinesfor Incremental Training on MLP-based Recommendation Models"
-    - venue: "SIGMOD '22"
-      title: "Redundancy Elimination in Distributed Matrix Computation"
-    - venue: "VLDB 2022"
-      title: "ReMac: A Matrix Computation System with Redundancy Elimination"
-    - venue: "SIGMOD '21"
-      title: "Hybrid Evaluation for Distributed Iterative Matrix Computation"
-    - venue: "VLDB 2021"
-      title: "HyMAC: A Hybrid Matrix Computation System"
 - id: "Cedar"
   title: "分布式与云原生数据库"
   description: >
@@ -100,29 +5,43 @@
     以应对海量数据存储与实时处理需求。
     主要成果包括：针对分布式数据库系统设计了工作负载驱动的分层死锁检测方法(HAWK)，
     解决了大规模分布式环境下的死锁问题；
-    开发了可扩展的元数据管理协调服务(FDBKeeper)和万亿级边的高吞吐图存储系统(RedTAO)；
     提出了面向更新密集型工作负载的自适应LSM引擎(SylphDB)和实时HTAP的日志重放框架；
     在并发控制方面，实现了适应异构工作负载的自适应乐观并发控制机制。
     这些工作从死锁检测、元数据管理、图数据处理、
     存储引擎优化到并发控制等多个维度提升了分布式数据库系统的性能和可靠性。
   image: "/images/projects/4.png"
   papers:
-    - venue: "USENIX ATC '18"
-      title: "Solar: Towards a Shared-Everything Database on Distributed Log-Structured Storage"
-    - venue: "ICDE 2021"
-      title: "SLIMSTORE: A Cloud-based Deduplication System for Multi-version Backups"
-    - venue: "TOS 2019"
-      title: "SolarDB: Toward a Shared-Everything Database on Distributed Log-Structured Storage"
     - venue: "VLDB 2025"
       title: "HAWK: A Workload-driven Hierarchical Deadlock Detection Approach in Distributed Database System"
     - venue: "VLDB 2025"
       title: "FDBKeeper: Enabling Scalable Coordination Services for Metadata Management using Distributed Key-Value Databases"
-    - venue: "SIGMOD '25"
+    - venue: "SIGMOD 2025"
       title: "RedTAO: A Trillion-edge High-throughput Graph Store"
+    - venue: "PVLDB 2024"
+      title: "Fast Commitment for Geo-Distributed Transactions via Decentralized Co-coordinators"
     - venue: "ICDE 2024"
-      title: "Log Replaying for Real-Time HTAP: An Adaptive Epoch-based Two-Stage Framework"
+      title: "Log Replaying for Real-Time HTAP: An Adaptive Epoch-based Two-Stage Framework"      
+    - venue: "PVLDB 2022"
+      title: "Starry: Multi-master Transaction Processing on Semi-leader Architecture"
+    - venue: "FCS 2022"
+      title: "Efficient and stable quorum-based log replication and replay for modern cluster-databases"
+    - venue: "ICDE 2021"
+      title: "SLIMSTORE: A Cloud-based Deduplication System for Multi-version Backups"
+    - venue: "FCS 2021"
+      title: "Incremental join view maintenance on distributed log-structured storage"
+    - venue: "DASFAA 2020"
+      title: "Dependency Preserved Raft for Transactions"
+    - venue: "DASFAA 2020"
+      title: "Migratable Paxos - Low Latency and High Throughput Consensus Under Geographically Shifting Workloads"
     - venue: "VLDB 2019"
       title: "Adaptive Optimistic Concurrency Control for Heterogeneous Workloads"
+    - venue: "DASFAA 2019"
+      title: "Fast Quorum-based Log Replication and Replay for Fast Databases"
+    - venue: "USENIX ATC 18"
+      title: "Solar: Towards a Shared-Everything Database on Distributed Log-Structured Storage"
+    - venue: "DASFAA 2018"
+      title: "Efficient Snapshot Isolation in Paxos-Replicated Database Systems"
+
 - id: "PG-RAC"
   title: "高性能数据处理技术（包括新硬件和in memory OLAP）"
   description: >
@@ -135,30 +54,141 @@
     为金融交易、实时分析等场景提供高性能技术支撑。
   image: "/images/projects/5.jpg"
   papers:
+    - venue: "ICDE 2025"
+      title: "Columnar Formatted Inverted Index for Highly-paralleled, Vectorized Query Processin, International Conference on Data Engineering"
+    - venue: "TACO 2024"
+      title: "SuccinctKV: a CPU-efficient LSM-tree Based KV Store with Scan-based Compaction"
+    - venue: "PVLDB 2023"
+      title: "MagicScaler: uncertainty-aware, predictive autoscaling"
+    - venue: "ICDE 2023"
+      title: "PM-Blade: A Persistent Memory Augmented LSM-tree Storage for Database"
+    - venue: "ICDE 2023"
+      title: "Workload-Aware Log-Structured Merge Key-Value Store for NVM-SSD Hybrid Storage"
+    - venue: "FCS 2023"
+      title: "High-availability in-memory key-value store using RDMA and Optane DCPMM"
     - venue: "CIKM 2022"
       title: "Hockey: A Hybrid PMem-SSD Storage Engine for Analytical Database"
-    - venue: "USENIX ATC '18"
-      title: "Solar: Towards a Shared-Everything Database on Distributed Log-Structured Storage"
-    - venue: "TOS 2019"
-      title: "SolarDB: Toward a Shared-Everything Database on Distributed Log-Structured Storage"
-- id: "DL"
-  title: "大语言模型优化数据分析管道"
+    - venue: "FCS 2021"
+      title: "RS-store: RDMA-enabled skiplist-based key-value store for efficient range query"
+    - venue: "CIKM 2021"
+      title: "Jasmine: Exploring the Dependency-Aware Execution on Distributed Shared Memory"
+    - venue: "TKDE 2020"
+      title: "Scheduling Resources to Multiple Pipelines of One Query in a Main Memory Database Cluster"
+    - venue: "DASFAA 2020"
+      title: "High Performance Design for Redis with Fast Event-Driven RDMA RPCs"
+    - venue: "PVLDB 2019"
+      title: "Adaptive Optimistic Concurrency Control for Heterogeneous Workloads"
+    - venue: "ICDE 2018"
+      title: "Range Optimistic Concurrency Control for a Composite OLTP and Bulk Processing Workload"
+
+- id: "DBHammer"
+  title: "数据库测试与评测"
   description: >
-    探索了大语言模型在数据分析自动化方面的应用。
-    主要成果包括：开发了基于大语言模型的自动化跨域探索性数据分析系统 TiInsight，
+    构建高效、全面的数据库系统评估方法与工具，
+    以支撑数据库性能调优、正确性验证及新型场景适配。
+    实验室在负载生成技术方面，实现了高效的面向数据库系统查询优化的负载生成，
+    以及面向事务处理性能调优的负载生成；在评测基准方面，
+    研发出面向分布式事务的评测基准Dike及OLAP自动测试套件Artemis；
+    在事务处理正确性验证方向，开发了可扩展的通用隔离级别验证框架Leopard和高效测试案例生成框架DBStorm。
+    这些成果大幅提升了数据库测试的覆盖范围与效率，成功揭示了多个主流数据库系统的实现缺陷，受到工业界广泛关注。
+  image: "/images/projects/2.png"
+  papers:
+    - venue: "SIGMOD 2025"
+      title: "A Query-Aware Enormous Database Generator For System Performance Evaluation"
+    - venue: "ICDE 2025"
+      title: "Artemis: A Customizable Workload Generation Toolkit for Benchmarking Cardinality Estimation"
+    - venue: "ICDE 2024"
+      title: "Mirage: Generating Enormous Databases for Complex Workloads"
+    - venue: "TKDE 2024"
+      title: "Lauca: A Workload Duplicator for Benchmarking Transactional Database Performance"
+    - venue: "ISSTA 2024"
+      title: "DBStorm: Generating Various Effective Workloads for Testing Isolation Levels"
+    - venue: "DASFAA 2024"
+      title: "Touchstone+ : Query Aware Database Generation for Match Operators"
+    - venue: "SIGMOD 2023"
+      title: "Dike: A Benchmark Suite for Distributed Transactional Databases"
+    - venue: "ICDE 2023"
+      title: "Leopard: A Black-Box Approach for Efficiently Verifying Various Isolation Levels"
+    - venue: "ICDE 2022"
+      title: "Application-Oriented Workload Generation for Transactional Database Performance Evaluation"
+    - venue: "TKDE 2022"
+      title: "A Scalable Query-Aware Enormous Database Generator for Database Evaluation"
+    - venue: "Frontiers of Computer Science 2020"
+      title: "Benchmarking on intensive transaction processing"
+    - venue: "USENIX ATC 2018"
+      title: "Touchstone: Generating Enormous Query-Aware Test Databases"
+
+
+- id: "DMIC"
+  title: "面向AI的数据基架"
+  description: >
+    聚焦数据库系统、深度学习系统、大数据处理系统等基础软件系统的性能瓶颈，
+    研发支持智能时代数据管理的基础软件系统。主要成果包括：
+    设计高性能的支持AI预测查询的数据管理系统，如IMBridge；
+    在算法特性、硬件架构等方面优化深度学习系统，如HyInJ、RECS；
+    通过优化迭代式矩阵运算来优化基于大数据平台的机器学习系统，如ReMac、HyMAC。
+    这些工作从上层应用、底层硬件等多角度出发，着力提升软件系统的执行效率。
+    研究工作得到国家和上海市科技计划，以及蚂蚁、腾讯、PingCAP等合作企业的支持。
+  image: "/images/projects/3.png"
+  papers:
+    - venue: "SIGMOD 2025"
+      title: "Mitigating the Impedance Mismatch between Prediction Query Execution and Database Engine"
+    - venue: "SIGMOD 2025"
+      title: "Scheduling Data Processing Pipelinesfor Incremental Training on MLP-based Recommendation Models"
+    - venue: "ICDE 2025"
+      title: "Machine Learning Inference Pipeline Execution Using Pure SQL Based on Operator Fusion"
+    - venue: "SIGMOD 2024"
+      title: "Impedance Mismatch Mitigation between Database Engine and Prediction Query Execution"
+    - venue: "ICDE 2024"
+      title: "Hybrid Evaluation for Occlusion-based Explanations on CNN Inference Queries"
+    - venue: "PPoPP 2023"
+      title: "Elastic Averaging for Efficient Pipelined DNN Training"
+    - venue: "SIGMOD 2022"
+      title: "Redundancy Elimination in Distributed Matrix Computation"
+    - venue: "VLDB 2022"
+      title: "ReMac: A Matrix Computation System with Redundancy Elimination"
+    - venue: "SIGMOD 2021"
+      title: "Hybrid Evaluation for Distributed Iterative Matrix Computation"
+    - venue: "VLDB 2021"
+      title: "HyMAC: A Hybrid Matrix Computation System"
+
+- id: "AI4DB" # 内部ID
+  title: "智能自治化数据库系统" # 项目名
+  description: > # 项目简介（可换行，实际显示时会忽略换行符）
+    将人工智能技术应用于数据库系统的自动化优化和管理。
+    主要成果包括：开发了面向分布域外工作负载的风险感知索引收益估算方法(Rainbow)，
+    提高了索引推荐的准确性；
+    通过多任务学习实现了功能感知的数据库调优，
+    并为慢查询提供了在线索引推荐服务；
+    构建了面向事务数据库的多异常数据生成系统(DB-MAGS)；
+    开发了基于大语言模型的自动化跨域探索性数据分析系统 TiInsight，
     实现了数据分析流程的端到端自动化；
     构建了统一的多智能体大语言模型表格问答系统(UNITQA)和自主表格问答系统(AutoTQA)，
     大幅提升了结构化数据的问答能力；
     设计了零样本自动探索性数据分析系统(Chat2Query)，让用户能够通过自然语言交互进行数据分析。
-    这些工作将大语言模型的自然语言理解能力与数据分析任务深度结合，
-    降低了数据分析的技术门槛，提升了数据分析的效率和准确性。
-  image: "/images/projects/6.png"
-  papers:
+    这些研究将机器学习、多任务学习等AI技术与数据库优化深度融合，
+    实现了数据库系统的智能化管理，显著提升了系统的自动化运维能力和性能优化效果。
+  image: "/images/projects/1.png" # 项目图片
+  papers: # Publication List
     - venue: "VLDB 2025"
       title: "Towards Automated Cross-domain Exploratory Data Analysis through Large Language Models"
-    - venue: "SIGMOD '25"
+    - venue: "PVLDB 2025"
+      title: "AQETuner: Reliable Query-level Configuration Tuning for Analytical Query Engines"
+    - venue: "SIGMOD 2025"
       title: "UNITQA: A Unified Automated Tabular Question Answering System with Multi-Agent Large Language Models"
+    - venue: "ICDE 2025" # 期刊
+      title: "Learning from the Past: Adaptive Parallelism Tuning for Stream Processing Systems" # 标题
+    - venue: "ICDE 2025"
+      title: "Hyper: hybrid physical design advisor with multi-agent reinforcement learning. "
+    - venue: "ICDE 2025"
+      title: "Rabbit: retrieval-augmented generation enables better automatic database knob tuning"
     - venue: "VLDB 2024"
       title: "AutoTQA: Towards Autonomous Tabular Question Answering through Multi-agent Large Language Models"
+    - venue: "SIGMOD 2024"
+      title: "ByteCard: Enhancing ByteDance’s Data Warehouse with Learned Cardinality Estimation"
     - venue: "ICDE 2024"
       title: "Chat2Query: A Zero-Shot Automatic Exploratory Data Analysis System with Large Language Models"
+    - venue: "ECML PKDD 2024"
+      title: "LATuner: An LLM Enhanced Database Tuning System Based on Adaptive Surrogate Model"
+    - venue: "ICDE 2023"
+      title: "Workload-Aware Log-Structured Merge Key-Value Store for NVM-SSD Hybrid Storage"
