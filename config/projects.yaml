@@ -17,12 +17,8 @@
       title: "Log Replaying for Real-Time HTAP: An Adaptive Epoch-based Two-Stage Framework"      
     - venue: "PVLDB 2022"
       title: "Starry: Multi-master Transaction Processing on Semi-leader Architecture"
-    - venue: "FCS 2022"
-      title: "Efficient and stable quorum-based log replication and replay for modern cluster-databases"
     - venue: "ICDE 2021"
       title: "SLIMSTORE: A Cloud-based Deduplication System for Multi-version Backups"
-    - venue: "FCS 2021"
-      title: "Incremental join view maintenance on distributed log-structured storage"
     - venue: "DASFAA 2020"
       title: "Dependency Preserved Raft for Transactions"
     - venue: "DASFAA 2020"
@@ -39,6 +35,8 @@
 - id: "PG-RAC"
   title: "高性能数据处理技术"
   description: >
+    传统数据库在高并发写入和大规模分析场景下常面临性能瓶颈，难以同时满足响应速度、吞吐量和一致性要求。高性能数据处理技术通过引入持久内存、SSD 等新型硬件，提升存储与访问效率，并结合内存计算与 in-memory OLAP 架构，进一步优化事务处理与分析查询性能。  
+    
     主要成果包括：开发了支持多写事务的共享缓存数据库 PG-RAC，优化缓存协议与路由机制，降低跨节点访问开销和事务延迟，提升高并发场景下的系统吞吐能力；提出了面向分析型数据库的高效列式引擎 Hockey，针对 PMem 与 SSD 组成的异构存储环境，设计了数据与元数据在持久内存中的组织与访问机制，并提出分层数据放置策略，以实现混合存储架构下的性能与资源利用平衡。
   image: "/images/projects/5.jpg"
   papers:
@@ -52,12 +50,8 @@
       title: "PM-Blade: A Persistent Memory Augmented LSM-tree Storage for Database"
     - venue: "ICDE 2023"
       title: "Workload-Aware Log-Structured Merge Key-Value Store for NVM-SSD Hybrid Storage"
-    - venue: "FCS 2023"
-      title: "High-availability in-memory key-value store using RDMA and Optane DCPMM"
     - venue: "CIKM 2022"
       title: "Hockey: A Hybrid PMem-SSD Storage Engine for Analytical Database"
-    - venue: "FCS 2021"
-      title: "RS-store: RDMA-enabled skiplist-based key-value store for efficient range query"
     - venue: "CIKM 2021"
       title: "Jasmine: Exploring the Dependency-Aware Execution on Distributed Shared Memory"
     - venue: "TKDE 2020"
@@ -73,6 +67,7 @@
   title: "数据库测试与评测"
   description: >
     数据库系统的性能优化与评测一直是数据库领域的核心研究课题之一。我们针对事务处理、分析型查询与多模数据管理等典型场景，构建了涵盖负载生成、查询优化评估、系统行为分析与事务一致性验证的评测机制，逐步形成面向关系型与多模数据库系统的统一优化与评测体系，为系统性能调优、架构演进与稳定性保障提供了坚实支撑。
+    
     主要成果包括：提出查询感知型数据生成方法 Touchstone 系列，显著提升复杂查询场景下的负载构造效率与数据生成性能，为分析型优化器评估提供高效支持；开发事务负载生成工具 Lauca，实现高并发事务场景的行为仿真与评估复现；设计面向分布式事务系统的性能评测基准 Dike 和适用于 OLAP 场景的自动化测试工具 Artemis，并覆盖高冲突事务与复杂连接操作等典型负载；构建通用隔离级别验证框架 Leopard 及高效测试用例生成工具 DBStorm，以增强事务语义验证的规模化与自动化能力。
   image: "/images/projects/2.png"
   papers:
