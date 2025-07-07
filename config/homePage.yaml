@@ -8,7 +8,7 @@ description:
     是近年来学界和工业界关注的核心问题，也是数据学院长期从事的科研方向。
     数据学院与众多企业展开合作，研制新一代数据库、数据仓库和 AI 数据管理系统，
     取得了丰富的科研成果，获得多项省部级和国家级科技进步奖。
-  diagram: "/images/diagram.png" # 架构图路径，以public为根目录计算
+  diagram: "/images/diagram.jpg" # 架构图路径，以public为根目录计算
   enabled: true # 是否显示在页面上
 research:
   label: "研究方向"
