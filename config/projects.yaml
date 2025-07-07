@@ -43,7 +43,7 @@
       title: "Efficient Snapshot Isolation in Paxos-Replicated Database Systems"
 
 - id: "PG-RAC"
-  title: "高性能数据处理技术（包括新硬件和in memory OLAP）"
+  title: "高性能数据处理技术"
   description: >
     利用新硬件与内存计算技术突破数据处理性能瓶颈。
     主要成果包括：开发了多写可扩展共享缓存数据库PG-RAC，
